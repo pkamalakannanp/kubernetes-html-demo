@@ -2,6 +2,7 @@ pipeline {
 
   environment {
     registry = "kamal0405/cicd-html-demo"
+    registryCredential = 'docker_credentials'
     dockerImage = ""
   }
 
@@ -26,7 +27,7 @@ pipeline {
     stage('Push Image') {
       steps{
         script {
-          docker.withRegistry( "" ) {
+          docker.withRegistry('https://registry.hub.docker.com', 'docker_credentials') {
             dockerImage.push()
           }
         }

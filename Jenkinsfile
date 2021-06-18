@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    registry = "192.168.1.81:5000/justme/myweb"
+    registry = "kamal0405/cicd-html-demo"
     dockerImage = ""
   }
 
@@ -36,7 +36,9 @@ pipeline {
     stage('Deploy App') {
       steps {
         script {
-          kubernetesDeploy(configs: "myweb.yaml", kubeconfigId: "mykubeconfig")
+          withKubeConfig(caCertificate: '', clusterName: 'mypro', contextName: '', credentialsId: 'mykubeconfignew', namespace: '', serverUrl: 'http://127.0.0.1:58382/') {
+    // some block
+}
         }
       }
     }

@@ -36,7 +36,9 @@ pipeline {
     stage('Deploy App') {
       steps {
         script {
-          kubernetesDeploy configs: 'myweb.yaml', kubeConfig: [path: 'C:\\Users\\Administrator\\.kube'], kubeconfigId: 'mykubeconfig', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
+         kubeconfig(credentialsId: 'mykubeconfignew', serverUrl: '') {
+    // some block
+}
         }
       }
     }

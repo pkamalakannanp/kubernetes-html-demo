@@ -36,7 +36,8 @@ pipeline {
     stage('Deploy App') {
       steps {
         script {
-         kubeconfig(credentialsId: 'mykubeconfignew', serverUrl: '') {
+         kubeconfig(credentialsId: 'mykubeconfignew', serverUrl: '')
+         kubernetesDeploy(configs: "myweb.yaml", kubeconfigId: "mykubeconfignew") {
     // some block
 }
         }

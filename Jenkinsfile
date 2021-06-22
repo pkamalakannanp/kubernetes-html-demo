@@ -35,7 +35,9 @@ pipeline {
 
     stage('Deploy App') {
       steps {
-        sh 'kubectl apply -f myweb.yaml'
+        kubeconfig(credentialsId: 'mykubeconfignew', serverUrl: '') {
+    // some block
+}
       }
     }
 

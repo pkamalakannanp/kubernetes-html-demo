@@ -16,7 +16,7 @@ spec:
         app: myweb
     spec:
       containers:
-      - image: mykubeconfig
+      - image: kamal0405/cicd-html-demo
         imagePullPolicy: Always
         name: myweb
 

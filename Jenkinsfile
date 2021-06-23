@@ -37,6 +37,7 @@ pipeline {
       steps {
         script {
           kubernetesDeploy configs: 'myweb.yaml', kubeconfigId: 'mykubeconfig'
+            sh 'kubectl apply -f my-kubernetes-directory'
                 }
       }
     }
